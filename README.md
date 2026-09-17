@@ -47,3 +47,22 @@ The Expense Tracker is a financial management application designed to handle the
          │ (Django ORM)
          ▼
 [ SQLite Database (backend/db.sqlite3) ]
+
+
+5. Installation & Windows Setup GuidePrerequisitesPython 3.10+Node.js 18+ & npmBackend Setup (Terminal 1)Bashcd backend
+python -m venv venv
+.\venv\Scripts\activate
+pip install django djangorestframework django-cors-headers
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+Frontend Setup (Terminal 2)Bashcd frontend
+npm install
+6. Running the ApplicationRun both servers simultaneously in separate terminals:Backend Server:Bashcd backend
+.\venv\Scripts\activate
+python manage.py runserver
+(Runs at http://127.0.0.1:8000/)Frontend Server:Bashcd frontend
+npm run dev
+(Runs at http://localhost:5173/)7. REST API Documentation & EndpointsBase URL: http://127.0.0.1:8000/api/HTTP MethodEndpointDescriptionGET/api/expenses/List all expensesPOST/api/expenses/Create a new expenseGET/api/expenses/{id}/Get single expense detailsPUT/api/expenses/{id}/Full update of an expensePATCH/api/expenses/{id}/Partial update of an expenseDELETE/api/expenses/{id}/Delete an expense8. Version ControlManaged via Git and GitHub following strict clean-commit practices.Bashgit add .
+git commit -m "Initial commit for Expense Tracker full-stack application"
+git push origin main
